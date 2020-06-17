@@ -1,4 +1,7 @@
 
+const config = require('./.contentful.json')
+const contentful = require('contentful')
+
 export default {
   mode: 'universal',
   /*
@@ -55,6 +58,11 @@ export default {
 
   fontawesome: {
     component: 'fa'
+  },
+
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN
   },
 
   /*

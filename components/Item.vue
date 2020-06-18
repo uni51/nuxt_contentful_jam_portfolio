@@ -7,7 +7,9 @@
       class="mb-3 w-full h-64 bg-center bg-cover"
       :style=" 'background-image: url(' + work.fields.image.fields.file.url + ')' "
     ></div>
-    <h3 class="ml-3 font-bold">{{ work.fields.title }}</h3>
+    <nuxt-link :to=" '/work/' + work.fields.slug ">
+      <h3 class="ml-3 font-bold">{{ work.fields.title }}</h3>
+    </nuxt-link>  
     <h4 class="ml-3 my-2 text-xs">{{ work.fields.subtitle }}</h4>
     <div class="flex ml-2">
       <li 

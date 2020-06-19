@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <div class="absolute bg-white py-1 px-3 rounded shadow mt-1 ml-1 text-sm">
-      {{ work.fields.category.fields.name }}
-    </div>     
+  <div>  
     <div 
       class="w-full h-64 my-6 bg-cover bg-center shadow-lg"
       :style=" 'background-image: url(' + work.fields.image.fields.file.url + ')' "
     ></div>
+    <nuxt-link :to=" '/category/' + work.fields.category.sys.id "> <!-- ここを追加 -->
+      <p class="text-center">{{ work.fields.category.fields.name }}</p>
+    </nuxt-link> <!-- ここを追加 -->    
     <h1 class="text-center text-4xl">{{ work.fields.title }}</h1>
     <p class="text-center text-sm">{{ work.fields.subtitle }}</p>
     <div class="flex justify-center mb-5">
